@@ -31,8 +31,10 @@ TODO: Make a wavefront function for looped vertices:
 #######################################################################
 
 
-include "sage/misc/bitset.pxi"
-from sage.misc.bitset cimport FrozenBitset, Bitset
+#include "sage/misc/bitset.pxi"
+#from sage.misc.bitset cimport FrozenBitset, Bitset
+include "sage/data_structures/bitset.pxi"
+from sage.data_structures.bitset cimport FrozenBitset, Bitset 
 
 cdef update_wavefront(bitset_s *neighbors,bitset_s *unfilled):
     """
