@@ -26,7 +26,8 @@ and a brute-force approach to trying various bitsets.
 #######################################################################
 
 
-include "sage/misc/bitset.pxi"
+#include "sage/misc/bitset.pxi"
+include "sage/data_structure/.bitset.pxi"
 from sage.misc.bitset cimport FrozenBitset, Bitset    
     
 cpdef push_zeros(list neighbors, FrozenBitset subgraph, FrozenBitset filled_set, bint return_bitset=True):
