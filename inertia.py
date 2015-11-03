@@ -81,7 +81,7 @@ class InertiaSet(object):
         defaults.update(kwargs)
         return points(p, *args, **defaults)
 
-#import random #in Sage 6.8, random is included already
+import random #in Sage 6.8, a modified version of random is included in misc/prandom.py
 one_one=InertiaSet([(1,1)])
 def inertia_set(g, f):
     global inertia_cache
@@ -97,7 +97,7 @@ def inertia_set(g, f):
             #print I
         except ValueError:
             try:
-                cut_vertex=choice(c.blocks_and_cut_vertices()[1]) #I changed random.choice to choice
+                cut_vertex=random.choice(c.blocks_and_cut_vertices()[1]) #change random.choice to choice it no import
             except IndexError:
                 raise ValueError("Can not decompose unknown graph further", c)
             h=c.copy()
