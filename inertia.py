@@ -126,5 +126,26 @@ def inertia_set(g):
     inertia_cache[g6]=I
     return I
 
+def find_Mq_list(g):
+    """
+    Input:
+        g: simple graph
+    Output:
+        A list of [M0, M1, ..., Mn];
+        So Mq of g is find_Mq_list(g)[q];
+    """
+    n=g.order();
+    I=inertia_set(g);
+    gens=list(I.generators);
+    gens.sort(key=lambda k:k[1]); #sort by y coordinate
+    Mq_list=[-1]*(n+1); #there shouldn't have -1 in the outcome
+    k=len(gens);
+    gens.append((gens[k-1][0],n-gens[k-1][0]+1));
+    print gens
+    for i in range(k):
+        x=gens[i][0];
+        for y in range(gens[i][1],gens[i+1][1]):
+            Mq_list[y]=n-x-y;
+    return Mq_list;
     
 
