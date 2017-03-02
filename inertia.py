@@ -81,9 +81,25 @@ class InertiaSet(object):
         defaults.update(kwargs)
         return points(p, *args, **defaults)
 
+inertia_cache = dict()
+def basic_inertia_set(g):
+    global inertia_cache
+    g6=g.canonical_label().graph6_string()
+    if g6 in inertia_cache:
+        return inertia_cache[g6]
+    elif g.order()==1:
+        return InertiaSet([(0,0)], size=g.order())
+    elif g.order()==2 and g.size()==1:
+        return InertiaSet([(0,1)], size=g.order())
+    elif g.degree_sequence()[0]==g.order()-1 and g.degree_sequence()[1]==1:
+        # g is a star
+        return InertiaSet([(1,1), (g.order()-1,0)], size=g.order())
+    
+    raise ValueError("Do not know inertia set")
+
 import random #in Sage 6.8, a modified version of random is included in misc/prandom.py
 one_one=InertiaSet([(1,1)])
-def inertia_set(g, f):
+def inertia_set(g):
     global inertia_cache
     g6=g.canonical_label().graph6_string()
     if g6 in inertia_cache:
@@ -93,7 +109,7 @@ def inertia_set(g, f):
     for c in components:
         try:
             #print I
-            I+=f(c)
+            I+=basic_inertia_set(c)
             #print I
         except ValueError:
             try:
@@ -109,23 +125,6 @@ def inertia_set(g, f):
             I+=component_inertia
     inertia_cache[g6]=I
     return I
-
-
-inertia_cache = dict()
-def f(g):
-    global inertia_cache
-    g6=g.canonical_label().graph6_string()
-    if g6 in inertia_cache:
-        return inertia_cache[g6]
-    elif g.order()==1:
-        return InertiaSet([(0,0)], size=g.order())
-    elif g.order()==2 and g.size()==1:
-        return InertiaSet([(0,1)], size=g.order())
-    elif g.degree_sequence()[0]==g.order()-1 and g.degree_sequence()[1]==1:
-        # g is a star
-        return InertiaSet([(1,1), (g.order()-1,0)], size=g.order())
-    
-    raise ValueError("Do not know inertia set")
 
     
 
