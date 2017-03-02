@@ -118,8 +118,8 @@ def inertia_set(g):
                 raise ValueError("Can not decompose unknown graph further", c)
             h=c.copy()
             h.delete_vertex(cut_vertex)
-            component_inertia=inertia_set(h,f)+one_one
-            component_inertia|=sum((inertia_set(c.subgraph(cc+[cut_vertex]),f) 
+            component_inertia=inertia_set(h)+one_one
+            component_inertia|=sum((inertia_set(c.subgraph(cc+[cut_vertex])) 
                                                for cc in h.connected_components()), 
                                    InertiaSet([(0,0)]))
             I+=component_inertia
