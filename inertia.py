@@ -141,7 +141,6 @@ def find_Mq_list(g):
     Mq_list=[-1]*(n+1); #there shouldn't have -1 in the outcome
     k=len(gens);
     gens.append((gens[k-1][0],n-gens[k-1][0]+1));
-    print gens
     for i in range(k):
         x=gens[i][0];
         for y in range(gens[i][1],gens[i+1][1]):
