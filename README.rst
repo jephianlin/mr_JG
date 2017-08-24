@@ -1,4 +1,6 @@
 **This code is a copy of  Minimum Rank Library from Jason Grout's GitHub. 
+
+Change catalog:
 **All the materials remains the same except the path for bitset is updated for Sage 6.8.
 
 Minimum Rank Sage Library
