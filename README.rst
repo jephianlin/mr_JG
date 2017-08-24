@@ -14,4 +14,4 @@ See http://sage.cs.drake.edu/home/pub/69/ for an example of how to load and use 
 
 Change catalog
 --------------
--All the materials remains the same except the path for bitset is updated for Sage 6.8.
+- All the materials remains the same except the path for bitset is updated for Sage 6.8.
