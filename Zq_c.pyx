@@ -30,7 +30,8 @@ and a brute-force approach to trying various bitsets.
 #from sage.misc.bitset cimport FrozenBitset, Bitset    
 include "sage/data_structures/bitset.pxi"
 from sage.data_structures.bitset cimport FrozenBitset, Bitset 
-    
+include "sage/ext/stdsage.pxi" 
+
 cpdef push_zeros(list neighbors, FrozenBitset subgraph, FrozenBitset filled_set, bint return_bitset=True):
     """
     Run zero forcing as much as possible
