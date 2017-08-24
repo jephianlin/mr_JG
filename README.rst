@@ -1,8 +1,5 @@
 **This code is a copy of  Minimum Rank Library from Jason Grout's GitHub. 
 
-Change catalog:
-**All the materials remains the same except the path for bitset is updated for Sage 6.8.
-
 Minimum Rank Sage Library
 =========================
 
@@ -14,3 +11,7 @@ See http://sage.cs.drake.edu/home/pub/69/ for an example of how to load and use 
   files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py', 'inertia.py']
   for f in files:
       load(URL+f)
+
+Change catalog
+--------------
+-All the materials remains the same except the path for bitset is updated for Sage 6.8.
