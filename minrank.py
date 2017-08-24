@@ -824,7 +824,7 @@ def is_outerplanar(self, **kwds):
     if h.order()==0:
         return True
 
-    h.set_boundary(h.vertices())
+    #h.set_boundary(h.vertices())
     kwds['ordered']=False
     return h.is_circular_planar(**kwds)
 
