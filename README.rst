@@ -14,4 +14,4 @@ See http://sage.cs.drake.edu/home/pub/69/ for an example of how to load and use 
 
 Change catalog
 --------------
-- All the materials remains the same except the path for bitset is updated for Sage 6.8.
+See https://cocalc.com/projects/1aa2492a-8006-424e-8923-f0ba9088a663/files/change_log.sagews?session=default
