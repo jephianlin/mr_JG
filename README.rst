@@ -20,9 +20,9 @@ For CoCalc (previously SageMathCloud) user, if you are using a free acount, then
 1) Click the green button "Clone or download" and choose "Download Zip".
 2) Go to your project in CoCalc and upload this zip file.
 3) Create a terminal and open it.
-4) Type in the terminal:
+4) Type in the terminal::
   unzip mr_JG-master.zip
-5) Open your Sage worksheet and execute:
+5) Open your Sage worksheet and execute::
   URL='mr_JG-master/'
   files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py', 'inertia.py']
   for f in files:
