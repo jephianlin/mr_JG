@@ -36,7 +36,3 @@ for f in files:
     load(URL+f)
 ```
 If you are tired of downloading and uploading all the time, you may consider to subscribe CoCalc, which give you internet access from CoCalc to outside (in particular, GitHub).
-
-Change catalog
---------------
-See https://cocalc.com/share/1aa2492a-8006-424e-8923-f0ba9088a663/change_log.md?viewer=share
