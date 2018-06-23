@@ -10,6 +10,7 @@ See http://sage.cs.drake.edu/home/pub/69/ for an example of how to load and use 
   URL='https://raw.githubusercontent.com/jephianlin/mr_JG/master/'
   files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py', 'inertia.py']
   for f in files:
+      print("Loading %s..."%f);
       load(URL+f)
   
 CoCalc user
@@ -29,6 +30,7 @@ For CoCalc (previously SageMathCloud) user, if you are using a free acount, then
   URL='mr_JG-master/'
   files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py', 'inertia.py']
   for f in files:
+      print("Loading %s..."%f);
       load(URL+f)
 
 If you are tired of downloading and uploading all the time, you may consider to subscribe CoCalc, which give you internet access from CoCalc to outside (in particular, GitHub).
