@@ -30,7 +30,16 @@ and a brute-force approach to trying various bitsets.
 #from sage.misc.bitset cimport FrozenBitset, Bitset    
 include "sage/data_structures/bitset.pxi"
 from sage.data_structures.bitset cimport FrozenBitset, Bitset 
-include "sage/ext/stdsage.pxi" 
+
+### stdsage.pxi deprecated
+#include "sage/ext/stdsage.pxi" 
+#I will include its contents directly
+include "cysignals/memory.pxi"
+
+from cysignals.memory cimport sig_malloc as sage_malloc
+from cysignals.memory cimport sig_realloc as sage_realloc
+from cysignals.memory cimport sig_calloc as sage_calloc
+from cysignals.memory cimport sig_free as sage_free
 
 cpdef push_zeros(list neighbors, FrozenBitset subgraph, FrozenBitset filled_set, bint return_bitset=True):
     """
