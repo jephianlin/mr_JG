@@ -107,7 +107,10 @@ def zero_forcing_set_wavefront(matrix):
     cdef int num_vertices = matrix.nrows()
     cdef list zero_forcing_vertices = []
     cdef bitset_t unfilled_neighbors
-    cdef bitset_s *initial_set, *unfilled_set, *closure_to_add_unfilled, *closure_to_add_initial
+    cdef bitset_s *initial_set
+    cdef bitset_s *unfilled_set
+    cdef bitset_s *closure_to_add_unfilled
+    cdef bitset_s *closure_to_add_initial
     cdef bitset_s *neighbors
     
     # closures is a dictionary mapping closures (unfilled sets) to the initial zfs sets
