@@ -33,13 +33,15 @@ from sage.data_structures.bitset cimport FrozenBitset, Bitset
 
 ### stdsage.pxi deprecated
 #include "sage/ext/stdsage.pxi" 
-#I will include its contents directly
+#directly include the content intead
+### Partial contents of stdsage.pxi start here ###
 include "cysignals/memory.pxi"
 
 from cysignals.memory cimport sig_malloc as sage_malloc
 from cysignals.memory cimport sig_realloc as sage_realloc
 from cysignals.memory cimport sig_calloc as sage_calloc
 from cysignals.memory cimport sig_free as sage_free
+### Partial contents of stdsage.pxi end here ###
 
 cpdef push_zeros(list neighbors, FrozenBitset subgraph, FrozenBitset filled_set, bint return_bitset=True):
     """
