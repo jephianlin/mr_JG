@@ -163,7 +163,7 @@ def Zq_inertia_lower_bound(G,verbose=False):
     zero_forcing_number=zfs_sets[0]
     compute_Zq=True
     for q in range(n//2+1): # ceil(n/2)
-        if verbose: print "calculating Z%s"%q
+        if verbose: print("calculating Z%s"%q)
         if compute_Zq is True:
             Zq=Zq_bitset(G,q,zfs_sets=zfs_sets)[0]
         else:
@@ -216,7 +216,7 @@ def Zq_inertia_lower_bound(G, zero_forcing_function=None, verbose=False):
     zero_forcing_number=zero_forcing_function(G,n)
     compute_Zq=True
     for q in range(n//2+1): # ceil(n/2)
-        if verbose: print "calculating Z%s"%q
+        if verbose: print("calculating Z%s"%q)
         if compute_Zq is True:
             Zq=zero_forcing_function(G,q)
         else:
@@ -484,14 +484,14 @@ G2.subdivide_edges(G2.edges(),1)
 
 def check_trees(start,end):
     for i in range(start,end):
-        print "working on %s vertices"%i
+        print("working on %s vertices"%i)
         list(check_tree(list(graphs.trees(i))))
 
 @parallel            
 def check_tree(g):
     if not inertia_set(g,f)==Zq_inertia_lower_bound(g):
         if not inertia_set(g,f)==Zq_inertia_lower_bound(g, zero_forcing_function=Zqhat):
-            print '\n%s'%g.graph6_string()
+            print('\n%s'%g.graph6_string())
     return None
     
 

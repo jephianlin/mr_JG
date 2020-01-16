@@ -743,7 +743,7 @@ def minrank_bounds(graph, all_bounds=False, tests=['precomputed', 'order', 'zero
     # Check tests
     unknown_tests = set(tests).difference(possible_tests)
     if len(unknown_tests)>0:
-        print "Unknown tests specified: ", list(unknown_tests)
+        print("Unknown tests specified: ", list(unknown_tests))
 
     g=graph.copy()
     lower_bound = {'rank': 0}
