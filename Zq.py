@@ -447,7 +447,7 @@ def Zqhat(G, q, return_loops=False):
     # recursive calls.
     BEST_LOWER_BOUND = [0]
     if return_loops:
-	BEST_LOOPS = []
+        BEST_LOOPS = []
     else:
         BEST_LOOPS = False
     G_info = Zq_graph_info(G)
