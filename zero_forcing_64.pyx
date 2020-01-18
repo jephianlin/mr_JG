@@ -220,14 +220,14 @@ cpdef zero_forcing_set_bruteforce_cython_connected(graph, int upper_bound=-1):
             except IndexError:
                 perms[i][k] = (k+1) % n
 
-    print "%d permutations"%num_perms
+    print("%d permutations"%num_perms)
 
 
 
     mindegree=min(graph.degree())
-    print "Min degree is %d, so starting from there"%mindegree
+    print("Min degree is %d, so starting from there"%mindegree)
     for k from mindegree <= k <= upper_bound:
-        print "Investigating subsets of size %s"%k
+        print("Investigating subsets of size %s"%k)
 
         # Some code to generate all combinations of n things
         # taken k at a time
