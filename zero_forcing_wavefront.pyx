@@ -997,7 +997,7 @@ def zero_forcing_set_wavefront(matrix):
     # We have to fill at least one vertex to start, so budget >= 1
     for budget in range(minimum_degree,num_vertices+1):
         #print "current budget: ", budget, " Current closures: ", len(closures)
-        for unfilled_Bitset, initial_Bitset in closures.items():
+        for unfilled_Bitset, initial_Bitset in list(closures.items()):
             initial_set = &initial_Bitset._bitset[0]
             unfilled_set = &unfilled_Bitset._bitset[0]
             can_afford = budget - bitset_len(initial_set)
