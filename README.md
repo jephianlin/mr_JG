@@ -9,10 +9,7 @@ See http://sage.cs.drake.edu/home/pub/69/ for an example of how to load and use 
 
 ```python
 URL='https://raw.githubusercontent.com/jephianlin/mr_JG/master/'
-### *.pyx files failed to compile in newer Sage
-### Will take some time to fix it
-# files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py', 'inertia.py']
-files=['Zq.py','minrank.py', 'inertia.py']
+files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py', 'inertia.py']
 for f in files:
     print("Loading %s..."%f);
     load(URL+f)
@@ -33,10 +30,7 @@ unzip mr_JG-master.zip
 5. Open your Sage worksheet and execute::
 ```python
 URL='mr_JG-master/'
-### *.pyx files failed to compile in newer Sage
-### Will take some time to fix it
-# files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py', 'inertia.py']
-files=['Zq.py','minrank.py', 'inertia.py']
+files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py', 'inertia.py']
 for f in files:
     print("Loading %s..."%f);
     load(URL+f)
