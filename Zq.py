@@ -468,11 +468,11 @@ def Zqhat(G, q, return_loops=False):
     else:
         return BEST_LOWER_BOUND[0]
 
-def Zq_compute(G,q):
-    return Zq_bitset(G,q,push_zeros=push_zeros)
+def Zq_compute(G,q, return_track=False):
+    return Zq_bitset(G,q,push_zeros=push_zeros, return_track=return_track)
 
-def Zplus(G):
-   return Zq_compute(G,0)
+def Zplus(G, return_track=False):
+   return Zq_compute(G,0, return_track=return_track)
 
 from sage.all import Graph, graphs
 G=Graph()

@@ -88,6 +88,3 @@ List of major functions
 * `basic_inertia_set`
 * `inertia_set`
 * `find_Mq_list`
-
-#### `extra.py`:
-* 
