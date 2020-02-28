@@ -9,11 +9,21 @@ One goal of this library is to be able to be used both by loading the necessary 
 See http://sage.cs.drake.edu/home/pub/69/ for an example of how to load and use this library in Sage.  In particular, the following code in a Sage notebook cell will load this library:
 
 ```python
+def loadurl(url, timeout=5):
+    temp_name = tmp_filename() + '.' + os.path.splitext(url)[1][1:]
+
+    from urllib.request import urlopen
+    content = urlopen(url, timeout=timeout)
+    with open(temp_name, 'wb') as f:
+        f.write(content.read())
+    sage.repl.load.load(temp_name, globals())
+    os.unlink(temp_name)
+
 URL='https://raw.githubusercontent.com/jephianlin/mr_JG/master/'
 files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py', 'inertia.py']
 for f in files:
     print("Loading %s..."%f);
-    load(URL+f)
+    load(URL+f) ### replace load by loadurl if timeout
 ```
   
 CoCalc user
