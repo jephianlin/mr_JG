@@ -36,7 +36,8 @@ from sage.data_structures.bitset cimport FrozenBitset, Bitset
 #include "sage/ext/stdsage.pxi" 
 #directly include the content intead
 ### Partial contents of stdsage.pxi start here ###
-include "cysignals/memory.pxi"
+# [ver 10]: cysignals is now a Python package sponsored by SageMath
+# include "cysignals/memory.pxi"
 
 from cysignals.memory cimport sig_malloc as sage_malloc
 from cysignals.memory cimport sig_realloc as sage_realloc
